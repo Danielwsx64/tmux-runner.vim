@@ -15,9 +15,9 @@ local function send_keys(keys, pane_number)
 
 	io.popen(prefix .. keys)
 end
+
 local function run_shell_command(command, pane_number)
-	send_keys(Utils.shell_escape(command), pane_number)
-	send_keys("Enter", pane_number)
+	send_keys(Utils.shell_escape(command) .. " Enter", pane_number)
 end
 
 local function info(message)
